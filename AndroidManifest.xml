@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.morisoft.AndroidFreeGamENG.AOD" android:versionCode="1001001" android:versionName="1.1.1" android:installLocation="auto">
+	<application android:label="Destiny Defense: Angel or Devil" android:icon="res/drawable-hdpi/icon.png" android:allowAudioPlaybackCapture="true">
+		<activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:label="Destiny Defense: Angel or Devil" android:name="AOD" android:screenOrientation="landscape" android:configChanges="0xa4">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:theme="@android:style/Theme.Dialog" android:label="Destiny Defense: Angel or Devil" android:name="com.morisoft.NLib.WebPopUpDialog" android:configChanges="0xa4" />
+		<service android:name="com.morisoft.NLib.Android.PurchaseServiceConnection" />
+		<receiver android:name="com.morisoft.NLib.Android.BillingReceiver">
+			<intent-filter>
+				<action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+				<action android:name="com.android.vending.billing.RESPONSE_CODE" />
+				<action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+			</intent-filter>
+		</receiver>
+		<activity android:name="com.tapjoy.TJCOffersWebView" android:configChanges="0xa0" />
+		<activity android:name="com.tapjoy.TapjoyFeaturedAppWebView" android:configChanges="0xa0" />
+		<activity android:name="com.tapjoy.TapjoyVideoView" android:configChanges="0xa0" android:allowAudioPlaybackCapture="true" />
+	</application>
+	<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="8" />
+	<uses-permission android:name="com.android.vending.BILLING" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.UPDATE_DEVICE_STATS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+</manifest>

@@ -284,9 +284,9 @@ extends IInterface {
 
             @Override
             public boolean writeByOffset(byte[] arrby, int n, int n2) throws RemoteException {
-                boolean bl;
                 Parcel parcel;
                 Parcel parcel2;
+                boolean bl;
                 block2 : {
                     parcel = Parcel.obtain();
                     parcel2 = Parcel.obtain();

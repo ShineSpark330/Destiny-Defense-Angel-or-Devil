@@ -153,16 +153,16 @@ implements Runnable {
      * Lifted jumps to return sites
      */
     private void transferBufferToMediaPlayer() {
-        int n;
         boolean bl;
+        int n;
         int n2;
         try {
             bl = this.mediaPlayer.isPlaying();
-            n2 = this.mediaPlayer.getDuration();
-            n = this.mediaPlayer.getCurrentPosition();
+            n = this.mediaPlayer.getDuration();
+            n2 = this.mediaPlayer.getCurrentPosition();
             this.mediaPlayer.pause();
             MediaPlayer mediaPlayer = this.createMediaPlayer(this.downloadingMediaFile);
-            mediaPlayer.seekTo(n);
+            mediaPlayer.seekTo(n2);
             if (this.mediaPlayer != null) {
                 this.mediaPlayer.release();
             }
@@ -174,7 +174,7 @@ implements Runnable {
             this.bStreamingStart = true;
             return;
         }
-        boolean bl2 = n2 - n <= 1000;
+        boolean bl2 = n - n2 <= 1000;
         if (!bl) {
             if (!bl2) return;
         }

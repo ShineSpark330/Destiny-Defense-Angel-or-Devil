@@ -164,8 +164,8 @@ extends Activity {
         public boolean shouldOverrideUrlLoading(WebView webView, String string2) {
             String string3;
             Hashtable hashtable;
-            String string4;
             boolean bl;
+            String string4;
             TapjoyLog.i("Offers", "URL = [" + string2 + "]");
             if (string2.startsWith("tjvideo://")) {
                 hashtable = new Hashtable();

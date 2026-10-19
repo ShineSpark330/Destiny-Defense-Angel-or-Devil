@@ -223,8 +223,8 @@ implements Runnable {
         StreamingMediaPlayer streamingMediaPlayer = this;
         synchronized (streamingMediaPlayer) {
             try {
-                boolean bl;
                 int n;
+                boolean bl;
                 URLConnection uRLConnection = new URL(String.valueOf((Object)this.mUrl) + "/" + this.mFilename).openConnection();
                 uRLConnection.connect();
                 InputStream inputStream = uRLConnection.getInputStream();

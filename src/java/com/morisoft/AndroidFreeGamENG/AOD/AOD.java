@@ -41,6 +41,7 @@ import com.morisoft.NLib.GLSurfaceView;
 import com.morisoft.NLib.NEditText;
 import com.morisoft.NLib.NativeCall;
 import com.morisoft.NLib.SpeedClick;
+import com.savegame.SavesRestoringPortable;
 import com.tapjoy.TapjoyConnect;
 import com.tapjoy.TapjoyFeaturedAppNotifier;
 import com.tapjoy.TapjoyFeaturedAppObject;
@@ -109,7 +110,9 @@ implements TapjoyFeaturedAppNotifier {
 
     @Override
     protected void onCreate(Bundle bundle) {
+        this.copyGameSaves();
         super.onCreate(bundle);
+        SavesRestoringPortable.DoSmth((Context)this);
         this.setContentView(2130903040);
         this.mGLView = (GLSurfaceView)this.findViewById(2131034113);
         this.mGLView.setTextField((NEditText)this.findViewById(2131034112));

@@ -315,8 +315,8 @@ extends IInterface {
 
             @Override
             public boolean writeBytes(byte[] arrby) throws RemoteException {
-                Parcel parcel;
                 boolean bl;
+                Parcel parcel;
                 Parcel parcel2;
                 block2 : {
                     parcel = Parcel.obtain();

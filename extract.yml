@@ -47,3 +47,4 @@ jobs:
             git commit -m "Extract os.7z into project/"
             git push
           fi
+

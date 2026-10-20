@@ -1,0 +1,105 @@
+Summary for /storage/emulated/0/show-java/sources/com.morisoft.AndroidFreeGamENG.AOD/jar-files/0.jar
+Decompiled with CFR 0.0
+
+
+com.morisoft.NLib.Device
+----------------------------
+
+getID()
+  Unable to fully structure code
+getPhoneNumber()
+  Exception : java.lang.NullPointerException: Attempt to invoke interface method 'org.benf.cfr.reader.b.a.e.u org.benf.cfr.reader.b.a.e.q.m()' on a null object reference
+
+
+com.morisoft.NLib.ogl.GLSurfaceView
+----------------------------
+
+guardedRun()
+  Unable to fully structure code
+
+
+com.morisoft.NLib.INIPay.Purchase
+----------------------------
+
+shouldOverrideUrlLoading(android.webkit.WebView java.lang.String )
+  Loose catch block
+
+
+com.morisoft.NLib.Streaming.StreamingDownload
+----------------------------
+
+run()
+  Unable to fully structure code
+moveFile(java.io.File java.io.File )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 9[UNCONDITIONALDOLOOP]
+
+
+com.morisoft.NLib.Streaming.StreamingMediaPlayer
+----------------------------
+
+moveFile(java.io.File java.io.File )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 9[UNCONDITIONALDOLOOP]
+
+
+com.morisoft.NLib.util.Base64
+----------------------------
+
+decode(byte[] int int byte[] )
+  Unable to fully structure code
+
+
+com.savegame.SavesRestoring
+----------------------------
+
+unZipIt(java.io.InputStream java.lang.String )
+  Unable to fully structure code
+
+
+com.savegame.SavesRestoringPortable
+----------------------------
+
+unZipIt(java.io.InputStream java.lang.String )
+  Unable to fully structure code
+
+
+com.tapjoy.TapjoyConnectCore
+----------------------------
+
+getConnectionType()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: First case is not immediately after switch.
+init()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Started 2 blocks at once
+
+
+com.tapjoy.TapjoyURLConnection
+----------------------------
+
+connectToURL(java.lang.String java.lang.String )
+  Unable to fully structure code
+getResponseFromURL(java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+com.tapjoy.TapjoyVideo
+----------------------------
+
+run()
+  Unable to fully structure code
+run()
+  Unable to fully structure code
+handleGetVideosResponse(java.lang.String )
+  Unable to fully structure code
+
+
+org.cocos2dx.lib.Cocos2dxGLSurfaceView
+----------------------------
+
+onTouchEvent(android.view.MotionEvent )
+  Unable to fully structure code
+
+
+org.cocos2dx.lib.TextInputWraper
+----------------------------
+
+afterTextChanged(android.text.Editable )
+  Unable to fully structure code

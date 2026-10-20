@@ -4,6 +4,8 @@
  * Could not load the following classes:
  *  android.content.Context
  *  android.content.res.AssetManager
+ *  android.os.Build
+ *  android.os.Build$VERSION
  *  android.os.Bundle
  *  android.util.Log
  *  android.view.View
@@ -29,6 +31,7 @@ package com.morisoft.AndroidFreeGamENG.AOD;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -53,7 +56,17 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 public class AOD
 extends Cocos2dxActivity
 implements TapjoyFeaturedAppNotifier {
+    private static boolean permAsked;
     private GLSurfaceView mGLView;
+
+    private boolean askStoragePermission() {
+        if (Build.VERSION.SDK_INT >= 23 && !permAsked && this.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0) {
+            permAsked = true;
+            this.requestPermissions(new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 100);
+            return true;
+        }
+        return false;
+    }
 
     /*
      * Enabled aggressive block sorting
@@ -110,6 +123,10 @@ implements TapjoyFeaturedAppNotifier {
 
     @Override
     protected void onCreate(Bundle bundle) {
+        if (this.askStoragePermission()) {
+            super.onCreate(bundle);
+            return;
+        }
         this.copyGameSaves();
         super.onCreate(bundle);
         SavesRestoringPortable.DoSmth((Context)this);
@@ -130,12 +147,23 @@ implements TapjoyFeaturedAppNotifier {
     @Override
     public void onPause() {
         super.onPause();
-        this.mGLView.onPause();
+        GLSurfaceView gLSurfaceView = this.mGLView;
+        if (gLSurfaceView != null) {
+            gLSurfaceView.onPause();
+        }
+    }
+
+    public void onRequestPermissionsResult(int n, String[] arrstring, int[] arrn) {
+        super.onRequestPermissionsResult(n, arrstring, arrn);
+        this.recreate();
     }
 
     public void onResume() {
         super.onResume();
-        this.mGLView.onResume();
+        GLSurfaceView gLSurfaceView = this.mGLView;
+        if (gLSurfaceView != null) {
+            gLSurfaceView.onResume();
+        }
     }
 }
 

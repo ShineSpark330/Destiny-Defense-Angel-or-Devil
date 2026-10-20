@@ -99,7 +99,10 @@ extends com.morisoft.NLib.ogl.GLSurfaceView {
     }
 
     public static void sendMessage(Message message) {
-        GLSurfaceView.surfaceView.handler.sendMessage(message);
+        GLSurfaceView gLSurfaceView = surfaceView;
+        if (gLSurfaceView != null) {
+            gLSurfaceView.handler.sendMessage(message);
+        }
     }
 
     public void initView(Context context) {

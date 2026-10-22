@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: 'Type DELETE to remove everything except .github'
+        description: 'Type DELETE to remove everything except .github and os.7z'
         required: true
         default: ''
 
@@ -19,11 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Delete everything except .github
+      - name: Delete everything except .github and os.7z
         run: |
           find . -mindepth 1 -maxdepth 1 \
             ! -name '.git' \
             ! -name '.github' \
+            ! -name 'os.7z' \
             -exec rm -rf {} +
           ls -la
 
@@ -35,6 +36,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to delete."
           else
-            git commit -m "Delete all files except .github"
+            git commit -m "Delete all files except .github and os.7z"
             git push
           fi
